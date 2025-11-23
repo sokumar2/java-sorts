@@ -4,7 +4,7 @@ import collections.sorts.Order;
 import collections.Application;
 import collections.sorts.AbstractSort;
 
-public class BubbleSort<T extends Comparable<T>> extends AbstractSort<T> {
+final public class BubbleSort<T extends Comparable<T>> extends AbstractSort<T> {
 
     public void sort(T[] array, int length, Order order) {
         int comparisons = 0;

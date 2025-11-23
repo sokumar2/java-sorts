@@ -3,7 +3,7 @@ package collections.sorts;
 import collections.sorts.Order;
 import collections.sorts.AbstractSort;
 
-public class SelectionSort<T extends Comparable<T>> extends AbstractSort<T> {
+final public class SelectionSort<T extends Comparable<T>> extends AbstractSort<T> {
 
     public void sort(T[] array, int length, Order order) {
         for (int i = 0; i < length - 1; i++) {
