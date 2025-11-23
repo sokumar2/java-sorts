@@ -21,7 +21,8 @@ final public class CollectionTest extends TestCase {
         @Override
         public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
             return Stream.of(
-                Arguments.of(Sorter.BUBBLE_SORT)
+                Arguments.of(Sorter.BUBBLE_SORT),
+                Arguments.of(Sorter.SELECTION_SORT)
             );
         }
 
