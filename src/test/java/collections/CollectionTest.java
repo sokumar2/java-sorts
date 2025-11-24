@@ -2,10 +2,11 @@ package test.collections;
 
 import test.TestCase;
 import org.junit.Test;
-import collections.Array;
 import collections.Collection;
 import collections.sorts.Order;
 import java.util.stream.Stream;
+import collections.Application;
+import collections.utils.Array;
 import collections.sorts.Sorter;
 import static org.junit.Assert.assertArrayEquals;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -31,17 +32,23 @@ final public class CollectionTest extends TestCase {
 
     @ParameterizedTest
     @ArgumentsSource(MyArgumentsProvider.class)
-    public void testSort(Sorter sorter) {
-        Integer[] expected = new Array(100).build();
-        Integer[] actual = new Array(100).shuffle().build();
+    public void testSortAscending(Sorter sorter) {
+        Integer[] expected = new Array(1000).build();
+        Integer[] actual = new Array(1000).shuffle().build();
 
         Collection.sort(actual, Order.ASCENDING, sorter);
-        assertArrayEquals("Ascending Order", actual, expected);
 
-        expected = new Array(100).reverse().build();
-        actual = new Array(100).shuffle().build();
+        assertArrayEquals("Ascending Order", actual, expected);
+    }
+
+    @ParameterizedTest
+    @ArgumentsSource(MyArgumentsProvider.class)
+    public void testSortDescending(Sorter sorter) {
+        Integer[] expected = new Array(1000).reverse().build();
+        Integer[] actual = new Array(1000).shuffle().build();
 
         Collection.sort(actual, Order.DESCENDING, sorter);
+
         assertArrayEquals("Descending Order", actual, expected);
     }
 
