@@ -4,6 +4,7 @@ import collections.sorts.Order;
 import collections.sorts.Sorter;
 import collections.sorts.BubbleSort;
 import collections.sorts.SelectionSort;
+import collections.sorts.InsertionSort;
 import collections.interfaces.Sortable;
 import collections.sorts.interfaces.Sort;
 
@@ -24,6 +25,8 @@ public class Collection<T extends Comparable<T>> implements Sortable<T> {
             new Collection(new BubbleSort()).execute(array, order);
         } else if (sorter == Sorter.SELECTION_SORT) {
             new Collection(new SelectionSort()).execute(array, order);
+        } else if (sorter == Sorter.INSERTION_SORT) {
+            new Collection(new InsertionSort()).execute(array, order);
         }
     }
 

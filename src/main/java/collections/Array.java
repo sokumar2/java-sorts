@@ -36,4 +36,14 @@ public class Array implements Shuffler {
         return this;
     }
 
+    public Array reverse() {
+        for (int i = 0; i < this.array.length / 2; i++) {
+            Integer swapped = this.array[i];
+            this.array[i] = this.array[this.array.length -1 - i];
+            this.array[this.array.length -1 - i] = swapped;
+        }
+
+        return this;
+    }
+
 }

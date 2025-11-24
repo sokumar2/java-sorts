@@ -22,7 +22,8 @@ final public class CollectionTest extends TestCase {
         public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
             return Stream.of(
                 Arguments.of(Sorter.BUBBLE_SORT),
-                Arguments.of(Sorter.SELECTION_SORT)
+                Arguments.of(Sorter.SELECTION_SORT),
+                Arguments.of(Sorter.INSERTION_SORT)
             );
         }
 
@@ -32,12 +33,16 @@ final public class CollectionTest extends TestCase {
     @ArgumentsSource(MyArgumentsProvider.class)
     public void testSort(Sorter sorter) {
         Integer[] expected = new Array(100).build();
-
         Integer[] actual = new Array(100).shuffle().build();
 
         Collection.sort(actual, Order.ASCENDING, sorter);
-
         assertArrayEquals("Ascending Order", actual, expected);
+
+        expected = new Array(100).reverse().build();
+        actual = new Array(100).shuffle().build();
+
+        Collection.sort(actual, Order.DESCENDING, sorter);
+        assertArrayEquals("Descending Order", actual, expected);
     }
 
 }
