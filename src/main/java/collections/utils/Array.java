@@ -1,4 +1,4 @@
-package collections;
+package collections.utils;
 
 import java.util.Random;
 import collections.interfaces.Shuffler;

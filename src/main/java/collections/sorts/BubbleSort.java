@@ -2,32 +2,36 @@ package collections.sorts;
 
 import collections.sorts.Order;
 import collections.Application;
+import collections.utils.Statistic;
 import collections.sorts.AbstractSort;
 
 final public class BubbleSort<T extends Comparable<T>> extends AbstractSort<T> {
 
     public void sort(T[] array, int length, Order order) {
-        int comparisons = 0;
+        Statistic statistic = new Statistic("Bubble Sort");
 
+        statistic.startTime();
         for (int i = 0; i < length - 1; i++) {
             for (int j = 0 ; j < array.length - i - 1; j++) {
+                statistic.compared();
+
                 if (Order.ASCENDING == order) {
                     if (array[j].compareTo(array[j + 1]) > 0) {
                         this.swap(array, j, j + 1);
-
-                        ++comparisons;
+                        statistic.swapped();
                     }
                 } else if (Order.DESCENDING == order) {
                     if (array[j].compareTo(array[j + 1]) < 0) {
                         this.swap(array, j, j + 1);
-
-                        ++comparisons;
+                        statistic.swapped();
                     }
                 }
             }
         }
+
+        statistic.endTime();
         if (Application.STATISTICS_MODE) {
-            System.out.println("Comparisons: " + comparisons);
+            statistic.print();
         }
     }
 
