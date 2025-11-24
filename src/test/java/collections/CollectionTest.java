@@ -24,7 +24,8 @@ final public class CollectionTest extends TestCase {
             return Stream.of(
                 Arguments.of(Sorter.BUBBLE_SORT),
                 Arguments.of(Sorter.SELECTION_SORT),
-                Arguments.of(Sorter.INSERTION_SORT)
+                Arguments.of(Sorter.INSERTION_SORT),
+                Arguments.of(Sorter.HEAP_SORT)
             );
         }
 

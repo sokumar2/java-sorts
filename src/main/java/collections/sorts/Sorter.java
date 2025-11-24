@@ -3,5 +3,6 @@ package collections.sorts;
 public enum Sorter {
     BUBBLE_SORT,
     SELECTION_SORT,
-    INSERTION_SORT
+    INSERTION_SORT,
+    HEAP_SORT
 }
