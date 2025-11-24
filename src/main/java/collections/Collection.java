@@ -2,6 +2,7 @@ package collections;
 
 import collections.sorts.Order;
 import collections.sorts.Sorter;
+import collections.sorts.HeapSort;
 import collections.sorts.BubbleSort;
 import collections.sorts.SelectionSort;
 import collections.sorts.InsertionSort;
@@ -27,6 +28,8 @@ public class Collection<T extends Comparable<T>> implements Sortable<T> {
             new Collection(new SelectionSort()).execute(array, order);
         } else if (sorter == Sorter.INSERTION_SORT) {
             new Collection(new InsertionSort()).execute(array, order);
+        } else if (sorter == Sorter.HEAP_SORT) {
+            new Collection(new HeapSort()).execute(array, order);
         }
     }
 
