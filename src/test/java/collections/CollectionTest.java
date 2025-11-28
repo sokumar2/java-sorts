@@ -25,7 +25,8 @@ final public class CollectionTest extends TestCase {
                 Arguments.of(Sorter.BUBBLE_SORT),
                 Arguments.of(Sorter.SELECTION_SORT),
                 Arguments.of(Sorter.INSERTION_SORT),
-                Arguments.of(Sorter.HEAP_SORT)
+                Arguments.of(Sorter.HEAP_SORT),
+                Arguments.of(Sorter.MERGE_SORT)
             );
         }
 

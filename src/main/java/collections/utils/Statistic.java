@@ -2,15 +2,9 @@ package collections.utils;
 
 public class Statistic {
 
-    String title;
-
     long startTime, endTime;
 
-    long comparisons, swaps = 0;
-
-    public Statistic(String title) {
-        this.title = title;
-    }
+    long comparisons = 0;
 
     public void startTime() {
         startTime = System.currentTimeMillis();
@@ -29,26 +23,11 @@ public class Statistic {
     }
 
     public void compared() {
-        ++this.comparisons;
-    }
-
-    public void swapped() {
-        ++this.swaps;
+        this.comparisons++;
     }
 
     public long getComparisons() {
         return this.comparisons;
     }
 
-    public long getSwaps() {
-        return this.swaps;
-    }
-
-    public void print() {
-        System.out.println(
-            title + "\nTime: " + this.duration() + "ms"
-            + " Comparisons: " + this.getComparisons()
-            + " Swaps: " + this.getSwaps()
-        );
-    }
 }
