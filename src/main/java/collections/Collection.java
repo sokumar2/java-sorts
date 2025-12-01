@@ -4,6 +4,7 @@ import collections.sorts.Order;
 import collections.sorts.Sorter;
 import collections.sorts.HeapSort;
 import collections.sorts.MergeSort;
+import collections.sorts.QuickSort;
 import collections.sorts.BubbleSort;
 import collections.sorts.SelectionSort;
 import collections.sorts.InsertionSort;
@@ -22,6 +23,14 @@ public class Collection<T extends Comparable<T>> implements Sortable<T> {
         sorter.sort(array, order);
     }
 
+    public static <T extends Comparable<T>> void sort(T[] array) {
+        sort(array, Order.ASCENDING, Sorter.QUICK_SORT);
+    }
+
+    public static <T extends Comparable<T>> void sort(T[] array, Order order) {
+        sort(array, order, Sorter.QUICK_SORT);
+    }
+
     public static <T extends Comparable<T>> void sort(T[] array, Order order, Sorter sorter) {
         if (sorter == Sorter.BUBBLE_SORT) {
             new Collection<T>(new BubbleSort<T>()).execute(array, order);
@@ -34,6 +43,8 @@ public class Collection<T extends Comparable<T>> implements Sortable<T> {
         } else if (sorter == Sorter.MERGE_SORT) {
             new Collection<T>(new MergeSort<T>()).execute(array, order);
         }
+
+        new Collection<T>(new QuickSort<T>()).execute(array, order);
     }
 
 }

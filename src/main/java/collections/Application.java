@@ -1,5 +1,6 @@
 package collections;
 
+import java.util.Arrays;
 import collections.Collection;
 import collections.sorts.Order;
 import collections.utils.Array;
@@ -12,6 +13,8 @@ public class Application {
     public static void main(String[] args) {
         Integer[] array = new Array(10).shuffle().build();
 
-        Collection.sort(array, Order.ASCENDING, Sorter.MERGE_SORT);
+        Collection.sort(array);
+
+        System.out.println(Arrays.toString(array));
     }
 }
