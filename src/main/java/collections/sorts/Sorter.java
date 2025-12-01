@@ -5,5 +5,6 @@ public enum Sorter {
     SELECTION_SORT,
     INSERTION_SORT,
     HEAP_SORT,
-    MERGE_SORT
+    MERGE_SORT,
+    QUICK_SORT
 }
