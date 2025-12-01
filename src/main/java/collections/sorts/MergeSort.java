@@ -11,7 +11,7 @@ final public class MergeSort<T extends Comparable<T>> extends AbstractSort<T> {
         this.sort(array, 0, length - 1, order);
     }
 
-    public void sort(T[] array, int low, int high, Order order) {
+    protected void sort(T[] array, int low, int high, Order order) {
         if (low < high) {
             int middle = low + (high - low) / 2;
 
@@ -22,7 +22,7 @@ final public class MergeSort<T extends Comparable<T>> extends AbstractSort<T> {
         }
     }
 
-    public void merge(T[] array, int low, int middle, int high, Order order) {
+    protected void merge(T[] array, int low, int middle, int high, Order order) {
         T[] left = Arrays.copyOfRange(array, low, middle + 1);
         T[] right = Arrays.copyOfRange(array, middle + 1, high + 1);
 
