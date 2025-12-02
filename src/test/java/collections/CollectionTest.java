@@ -35,6 +35,17 @@ final public class CollectionTest extends TestCase {
 
     @ParameterizedTest
     @ArgumentsSource(MyArgumentsProvider.class)
+    public void testSortEmpty(Sorter sorter) {
+        Integer[] expected = {};
+        Integer[] actual = {};
+
+        Collection.sort(actual, Order.ASCENDING, sorter);
+
+        assertArrayEquals("Empty Array", actual, expected);
+    }
+
+    @ParameterizedTest
+    @ArgumentsSource(MyArgumentsProvider.class)
     public void testSortAscending(Sorter sorter) {
         Integer[] expected = new Array(1000).build();
         Integer[] actual = new Array(1000).shuffle().build();
