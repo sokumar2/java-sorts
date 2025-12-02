@@ -5,16 +5,22 @@ import collections.Collection;
 import collections.sorts.Order;
 import collections.utils.Array;
 import collections.sorts.Sorter;
+import collections.utils.Statistic;
 
 public class Application {
 
     public static final boolean STATISTICS_MODE = false;
 
     public static void main(String[] args) {
-        Integer[] array = new Array(10).shuffle().build();
+        int capacity = 10000000;
 
-        Collection.sort(array);
+        System.out.println("Merge Sort");
+        Collection.sort(new Array(capacity).shuffle().build(), Order.ASCENDING, Sorter.MERGE_SORT);
 
-        System.out.println(Arrays.toString(array));
+        System.out.println("Quick Sort");
+        Collection.sort(new Array(capacity).shuffle().build(), Order.ASCENDING, Sorter.QUICK_SORT);
+
+        System.out.println("Heap Sort");
+        Collection.sort(new Array(capacity).shuffle().build(), Order.ASCENDING, Sorter.HEAP_SORT);
     }
 }
