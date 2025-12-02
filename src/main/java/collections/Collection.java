@@ -42,9 +42,9 @@ public class Collection<T extends Comparable<T>> implements Sortable<T> {
             new Collection<T>(new HeapSort<T>()).execute(array, order);
         } else if (sorter == Sorter.MERGE_SORT) {
             new Collection<T>(new MergeSort<T>()).execute(array, order);
+        } else if (sorter == Sorter.QUICK_SORT) {
+            new Collection<T>(new QuickSort<T>()).execute(array, order);
         }
-
-        new Collection<T>(new QuickSort<T>()).execute(array, order);
     }
 
 }
