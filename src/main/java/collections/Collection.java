@@ -24,7 +24,7 @@ public class Collection<T extends Comparable<T>> implements Sortable<T> {
     }
 
     public static <T extends Comparable<T>> void sort(T[] array) {
-        sort(array, Order.ASCENDING, Sorter.QUICK_SORT);
+        sort(array, Order.ASCENDING);
     }
 
     public static <T extends Comparable<T>> void sort(T[] array, Order order) {
