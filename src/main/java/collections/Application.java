@@ -1,11 +1,9 @@
 package collections;
 
-import java.util.Arrays;
 import collections.Collection;
 import collections.sorts.Order;
 import collections.utils.Array;
 import collections.sorts.Sorter;
-import collections.utils.Statistic;
 
 public class Application {
 
@@ -23,4 +21,5 @@ public class Application {
         System.out.println("Heap Sort");
         Collection.sort(new Array(capacity).shuffle().build(), Order.ASCENDING, Sorter.HEAP_SORT);
     }
+
 }

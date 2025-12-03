@@ -30,26 +30,4 @@ public abstract class AbstractSort<T extends Comparable<T>> implements Sort<T> {
         array[i] = swapped;
     }
 
-    public T minimum(T[] array) {
-        if (0 == array.length) {
-            return null;
-        }
-
-        T[] clone = array.clone();
-        this.sort(clone, 2, Order.DESCENDING);
-
-        return clone[array.length - 1];
-    }
-
-    public T maximum(T[] array) {
-        if (0 == array.length) {
-            return null;
-        }
-
-        T[] clone = array.clone();
-        this.sort(clone, 2, Order.ASCENDING);
-
-        return clone[array.length - 1];
-    }
-
 }
